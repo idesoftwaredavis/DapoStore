@@ -1,0 +1,170 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+.contenedor{
+  margin-top: 10px;
+  margin-left:5px;
+  margin-right:5px;
+  padding:20px;
+  border:1px solid #c3c3c3;
+  box-shadow: 0px 0px 8px #fff;
+}
+aside{
+  display:flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  text-align: center;
+  border:1px solid #c3c3c3;
+  box-shadow: 0px 0px 4px #fff;
+  height: 300px;
+  padding-top:10px;
+  margin-top:12px;
+}
+aside h3{
+  font-size: 24px;
+  text-shadow: 0px 0px 3px yellow;
+}
+aside ul li a{
+  color:black;
+  line-height: 50px;
+}
+
+aside ul li a:hover{
+  color:red;
+  transition:all 400ms;
+}
+.header-content{
+    background:url("../img/img.jpg"), url("../img/start.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgba(226,226,226,1);
+}
+
+/* HEADER STYLES */
+header nav{
+    height: 110px;
+    padding: 0 80px;
+    border-bottom: 1px solid orange;
+
+}
+
+.ul-navbar > li{
+    border-bottom:1px solid black;
+    line-height: 50px;
+    margin: 0 5px;
+}
+
+.ul-navbar li a{
+    font-size: 20px;
+}
+
+.ul-navbar > li a:hover{
+    border-bottom:1px solid black;
+    border-radius: 10px;
+    color:white;
+    font-size: 25px;
+    text-shadow: 0px 0px 4px orange;
+    transition: all 800ms;
+}
+
+.icon{
+    visibility: hidden;
+    padding:100px;
+}
+
+.icon:hover{
+    text-shadow: 0px 0px 4px orange;
+    transition: all .3s;
+}
+
+div.carousel a{
+    border:1px solid orange;
+    box-shadow: 0px 0px 4px red;
+    border-radius: 10px;
+}
+
+div.carousel a:hover{
+    border:1px solid green;
+    box-shadow: 0px 0px 4px green;
+    transition: all 300ms;
+}
+
+.card{
+    border-radius: 20px;
+}
+
+.card:hover{
+  box-shadow: 0px 0px 4px red;
+  transition:all 400ms;
+
+}
+
+/*INPUTS*/
+textarea{
+  height:200px;
+}
+
+textarea:focus{
+  box-shadow: 0px 0px 4px green;
+  transition:all 400ms;
+  text-align: center;
+}
+@media screen and (max-width:900px){
+  .contenedor{
+    width:100%;
+    margin-left:40px;
+    border:1px solid #c3c3c3;
+    box-shadow: 0px 0px 8px #fff;
+  }
+}
+
+@media screen and (max-width:991px){
+    .header-content{
+        height: 500px;
+    }
+
+    .icon{
+        visibility: visible;
+    }
+
+    /* Una ves pasa el mouse por el icon Home, se despliega menu de navegacion por arriba*/
+
+
+    header nav{
+        height: 20vh;
+    }
+
+    header nav div div ul li {
+        display:inline;
+        float:none;
+        border-bottom: 1px solid #ffe082;
+    }
+
+    header nav div div ul li:hover {
+        border-bottom: 1px solid black;
+        transition:all 300ms;
+    }
+
+    header nav div div ul li a {
+        display:inline-block;
+        padding-top:10px;
+    }
+
+    header nav div div ul li a:hover {
+        display:inline-block;
+        color:black;
+        text-shadow:0px 0px 4px orange;
+        transition:all 1000ms;
+        background-color:transparent;
+    }
+
+}
