@@ -24,6 +24,9 @@ document.addEventListener('DOMContentLoaded', function() {
       opacity:0.9,
       inDuration: 600,
       outDuration:300,
-
     });
+
+    
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems);
 });
