@@ -26,7 +26,33 @@ document.addEventListener('DOMContentLoaded', function() {
       outDuration:300,
     });
 
-    
+
     var elems = document.querySelectorAll('select');
     var instances = M.FormSelect.init(elems);
+
+    var elems = document.querySelectorAll('.dropdown-trigger');
+    var instances = M.Dropdown.init(elems, {});
+});
+
+
+div = document.getElementById('flotante');
+var x = document.getElementById("myDIV");
+
+window.addEventListener('load', function(event){
+  x.style.display = 'none';
+});
+
+function myFunction(){
+
+    if(x.style.display == "none"){
+      x.style.display = "block";
+    }else{
+      x.style.display = "none";
+    }
+}
+
+
+const btnToggle = document.querySelector('.toggle-btn');
+btnToggle.addEventListener('click', function(event){
+    document.getElementById('sidebar').classList.toggle('active');
 });
