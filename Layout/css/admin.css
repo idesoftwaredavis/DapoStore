@@ -3,6 +3,7 @@
   padding:0;
 }
 
+
 #sidebar{
   position:fixed;
   width:200px;
@@ -13,7 +14,7 @@
 }
 
 #sidebar.active{
-  left:0;
+  left:0px;
 }
 
 #sidebar ul li {
@@ -33,10 +34,12 @@
 
 #sidebar .toggle-btn{
   position:absolute;
-  left:230px;
+  left:150px;
   top:20px;
   cursor:pointer;
 }
+
+
 #sidebar .toggle-btn span {
   display:block;
   width:40px;
