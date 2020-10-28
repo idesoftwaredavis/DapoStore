@@ -121,6 +121,12 @@ textarea:focus{
 
 
 /*Carrito*/
+
+#vertial-align-payment{
+  display:flex;
+  flex-direction: column;
+
+}
 #title-payment{
   text-shadow:0px 0px 10px gray;
   padding-top:20px;
@@ -158,6 +164,7 @@ textarea:focus{
   box-shadow:0px 0px 10px orange;
   border-radius:10px;
 }
+
 
 @media screen and (max-width:900px){
   .contenedor{
