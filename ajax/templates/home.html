@@ -1,0 +1,47 @@
+{% load widget_tweaks %}
+{% load static %}
+<head>
+  <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<h1>Django project running</h1>
+<form data-post-url="{% url 'app:home' %}" method="post" id="id_contact_form">
+  {% csrf_token %}
+  {% render_field contact_form.name class+="form-control" %}
+  {{ contact_form.name.errors }}
+  {% render_field contact_form.email class+="form-control" %}
+  {{ contact_form.email.errors }}
+  {% render_field contact_form.message class+="form-control" %}
+  {{ contact_form.message.errors }}
+
+  <input type="submit" value="enviar" class="form-control">
+</form>
+
+{% block js %}
+  <script>
+    $(function() {
+      'use strict';
+
+      $('#id_contact_form').on('submit', function() {
+        // Guardando en la variable post_url, la direccion url que contiene
+        // el post de homeView.
+        var post_url = $("#id_contact_form").data("post-url");
+        var formData = new FormData(this);
+        $.ajax({
+          url : post_url,
+          type: "POST",
+          data: formData,
+          processData: false,
+          contentType: false,
+          success:function(response){
+            var message = response.content.message;
+            alert(message);
+            console.log(message);
+          },
+        });
+        return false;
+      });
+    });
+  </script>
+{% endblock %}

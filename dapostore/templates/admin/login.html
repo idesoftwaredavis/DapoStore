@@ -1,0 +1,28 @@
+{% extends '../base.html' %}
+{% load static %}
+
+{% block content %}
+<div >
+  <div id="login_contenido">
+    <div class="row">
+      <div class="col s6">
+        <h1>Panel de administrador</h1>
+      </div>
+      <div class="col s6">
+        <div class="card white" id="login_card">
+          <div class="card-content">
+            <form  method="POST">
+              {{ form.as_p }}
+              {% csrf_token %}
+              <input type="submit" value="Login" class="btn black">
+            </form>
+            <a href="#">Recuperar Contraseña</a>
+            <a href="{% url 'managment:admin_register' %}"> - Registrarse</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

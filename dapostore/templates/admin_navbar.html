@@ -1,0 +1,32 @@
+
+<nav>
+  <div class="nav-wrapper " style="background:#151719; height: 200px;">
+  </div>
+</nav>
+<!-- content -->
+<div class="container animate__animated animate__fadeInUp">
+  <div class="row">
+    <div class="col s12">
+      <div class="card">
+        <div class="card-content">
+          <a href="{% url 'core:index' %}">
+            <i class="material-icons black-text">arrow_back</i>
+            Home
+          </a>
+          <a href="{% url 'managment:admin_logout' %}">
+            Cerrar Sesion
+          </a>
+          <h3 class="center-align">Admin Site</h3>
+          <p class="center-align">Bienvenido, mucho exito {{request.user.username}}</p>
+        </div>
+        <nav class="white ">
+          <ul id="nav-mobile" class=" hide-on-med-and-down" style="margin-left:33.3%;">
+            <li><a href="{% url 'managment:admin_home' %}" class="black-text">Dashboard</a></li>
+            <li><a href="badges.html" class="black-text">Pedidos</a></li>
+            <li><a href="{% url 'managment:admin_products' %}" class="black-text">Tus productos</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>

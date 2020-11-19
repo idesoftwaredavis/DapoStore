@@ -1,0 +1,56 @@
+{% load widget_tweaks %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact us</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container mt-5 w-50">
+        <form id="contactForm" method="POST">
+          {% csrf_token %}
+          {% render_field form.name class+="form-control"%}
+          {{ form.name.errors }}
+          {% render_field form.email class+="form-control" %}
+          {{ form.email.errors }}
+          {% render_field form.message class+="form-control" %}
+          {{ form.message.errors }}
+
+            <input type="submit" name="contact-submit" class="btn btn-success btn-lg" />
+        </form>
+    </div>
+    {% block javascript %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+    $('#contactForm').submit(function() {
+      $.ajax({
+        data: $(this).serialize(),
+        type: $(this).attr('method'),
+        url: "{% url 'contact_form' %}",
+        // on success
+        success: function(response){
+          alert('thank you for reaching us out' + response.name);
+          console.log(response.responseJSON.errors)
+        },
+        // on error
+        error: function(response){
+          // alert the error if any error occured
+          alert(response.responseJSON.errors);
+          console.log(response.responseJSON.errors)
+        }
+      });
+      return false;
+    });
+    </script>
+    {% endblock javascript %}
+</body>
+
+</html>

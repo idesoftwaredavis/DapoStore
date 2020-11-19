@@ -1,0 +1,272 @@
+{% extends '../base.html' %}
+{% load static %}
+{% block content %}
+{% if request.user.is_superuser %}
+{% include '../admin_navbar.html' %}
+<div class="container" style="margin-left:18%;">
+  <div class="row">
+    <div class="col 4">
+      <div class="card-panel orange">
+        <h5>Ordenes Totales</h5>
+        <div class="divider black"></div>
+        <p>Ordenes : <strong>20</strong></p>
+      </div>
+    </div>
+
+    <div class="col 4">
+      <div class="card-panel red">
+        <h5 class="black-text">VENTAS PENDIENTES</h5>
+        <div class="divider black"></div>
+        <p>Pendientes : <strong>10</strong></p>
+      </div>
+    </div>
+
+
+    <div class="col 4">
+      <div class="card-panel green">
+        <h5 class="black-text">VENTAS FINALIZADAS</h5>
+        <div class="divider black"></div>
+        <p>Finalizadas : <strong>5</strong></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row" style="border:1px solid #c3c3c3; margin:10px; box-shadow:0px 0px 4px orange;">
+  <div class="col s6">
+    <div class="card">
+      <div class="card-content center">
+        <h3>Ultimas ventas</h3>
+
+        <table class="highlight resposive-table centered">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Item Name</th>
+              <th>Item Price</th>
+              <th>Options</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Alvin</td>
+              <td>Eclair</td>
+              <td>$0.87</td>
+              <td>
+                <a href="#" class="btn blue">Editar</a>
+                <a href="#" class="btn red">Eliminar</a>
+              </td>
+
+            </tr>
+            <tr>
+              <td>Alvin</td>
+              <td>Eclair</td>
+              <td>$0.87</td>
+              <td>
+                <a href="#" class="btn blue">Editar</a>
+                <a href="#" class="btn red">Eliminar</a>
+              </td>
+
+            </tr>
+            <tr>
+              <td>Alvin</td>
+              <td>Eclair</td>
+              <td>$0.87</td>
+              <td>
+                <a href="#" class="btn blue">Editar</a>
+                <a href="#" class="btn red">Eliminar</a>
+              </td>
+
+            </tr>
+            <tr>
+              <td>Alvin</td>
+              <td>Eclair</td>
+              <td>$0.87</td>
+              <td>
+                <a href="#" class="btn blue">Editar</a>
+                <a href="#" class="btn red">Eliminar</a>
+              </td>
+
+            </tr>
+            <tr>
+              <td>Alan</td>
+              <td>Jellybean</td>
+              <td>$3.76</td>
+              <td>
+                <a href="#" class="btn blue">Editar</a>
+                <a href="#" class="btn red">Eliminar</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Jonathan</td>
+              <td>Lollipop</td>
+              <td>$7.00</td>
+              <td>
+                <a href="#" class="btn blue">Editar</a>
+                <a href="#" class="btn red">Eliminar</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s6">
+    <div class="card">
+      <div class="card-content center">
+        <div class="row">
+
+          <div class="col s6">
+            <img src="{% static 'img/images.png' %}" alt="" width="<300></300>">
+
+            <p class="center-align">Ganancias</p>
+            <form method="get">
+              <select name="ganancias" id="ganancias">
+                <option value="0">Seleccionar</option>
+                <option value="1">Por dia (Actual)</option>
+                <option value="2">Semanal</option>
+                <option value="3">Mensual</option>
+                <option value="4">Anual</option>
+              </select>
+            </form>
+          </div>
+          <div class="col s6">
+            <h5 class="brown-text">Ingresos</h5>
+            <i class="large material-icons green-text">attach_money</i>
+            <p style="margin-top:5%;">Tus ganancias de ventas en el website : $100.000 el dia 10/11/2020</p>
+            <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Ver Detalle</a>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s6">
+            <h5 style="margin-top:35%;">Producto mas vendido (<i class="material-icons red-text">attach_money</i>): </h5>
+          </div>
+
+          <div class="col s6">
+            <div class="card-panel">
+              <img src="{% static 'img/medicamento.jpg' %}" alt="medicamento" width="100">
+              <div class="divider"></div>
+              <ul>
+                <li>Nombre : Prigily</li>
+                <li>Cantidad : 100</li>
+                <li>Stock : Disponible</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col s12">
+    <div class="card">
+      <div class="car-content center">
+        <h3>Ultimos pedidos</h3>
+        <table class="highlight resposive-table centered">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Item Name</th>
+              <th>Item Price</th>
+              <th>Item Road</th>
+              <th>Options</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Alvin</td>
+              <td>Eclair</td>
+              <td>$0.87</td>
+              <td>Dos por tres</td>
+              <td>
+                <a href="#" class="btn orange">Detalle</a>
+                <a href="#" class="btn black">Seguimiento</a>
+              </td>
+
+            </tr>
+            <tr>
+              <td>Alan</td>
+              <td>Jellybean</td>
+              <td>$3.76</td>
+              <td>Dos por tres</td>
+              <td>
+                <a href="#" class="btn orange">Detalle</a>
+                <a href="#" class="btn black">Seguimiento</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Jonathan</td>
+              <td>Lollipop</td>
+              <td>$7.00</td>
+              <td>Dos por tres</td>
+              <td>
+                <a href="#" class="btn orange">Detalle</a>
+                <a href="#" class="btn black">Seguimiento</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Jonathan</td>
+              <td>Lollipop</td>
+              <td>$7.00</td>
+              <td>Dos por tres</td>
+              <td>
+                <a href="#" class="btn orange">Detalle</a>
+                <a href="#" class="btn black">Seguimiento</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Jonathan</td>
+              <td>Lollipop</td>
+              <td>$7.00</td>
+              <td>Dos por tres</td>
+              <td>
+                <a href="#" class="btn orange">Detalle</a>
+                <a href="#" class="btn black">Seguimiento</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="fixed-action-btn ">
+  <a class="btn-floating btn-large black pulse">
+    <i class="large material-icons">mode_edit</i>
+  </a>
+  <ul>
+    <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+    <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+    <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+    <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+  </ul>
+</div>
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4>Descripcion</h4>
+    <p>No description yet, ups :()</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+  </div>
+</div>
+{% else %}
+
+<div class="container">
+  <div class="row">
+    <div class="col 12">
+      <p>ERROR 404, SOMETHING WRONG :( . THIS PAGE IS FOR ONLY SUPERUSER</p>
+    </div>
+  </div>
+</div>
+
+{% endif %}
+{% endblock %}

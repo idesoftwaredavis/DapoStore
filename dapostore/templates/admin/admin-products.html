@@ -1,0 +1,126 @@
+{% extends '../base.html' %}
+{% load static %}
+{% block content %}
+{% include '../admin_navbar.html' %}
+{% if request.user.is_superuser %}
+<div class="row">
+  <div class="col s6">
+    <div class="card-panel center-align black white-text">
+        <h5  >Another Thing</h5>
+        <p >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, iusto!</p>
+        <p >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, iusto!</p>
+
+        <p >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, iusto!</p>
+        <p >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, iusto!</p>
+
+        <p >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, iusto!</p>
+
+        <p >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, iusto!</p>
+
+        <p >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, iusto!</p>
+
+        <p >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, iusto!</p>
+        <p >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, iusto!</p>
+
+
+    </div>
+  </div>
+  <div class="col s6">
+    <div class="card-panel">
+      <h5 class="center-align"><img src="{% static 'img/calculadora.jpg' %}" alt="Calculadora" width="300"></h5>
+      <p class="center-align">Here we have a Calculator</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="row" style="margin:2%;">
+  <div class="col s6">
+    <div class="row">
+    <div class="card-panel">
+      <div class="col s5">
+        <select name="" id="">
+          <option value="">Op1</option>
+        </select>
+      </div>
+
+      <div class="col s5">
+        <select name="" id="">
+          <option value="">Op1</option>
+        </select>
+      </div>
+      <input type="submit" value="Search" class="btn black">
+    </div>
+    </div>
+  </div>
+
+  <div class="col s6">
+    <div class="row" style="margin-left:5px;">
+    <div class="card-panel">
+      <div class="col s5">
+        <select name="" id="">
+          <option value="">Op1</option>
+        </select>
+      </div>
+
+      <div class="col s5">
+        <select name="" id="">
+          <option value="">Op1</option>
+        </select>
+      </div>
+      <input type="submit" value="Search" class="btn black">
+    </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="card-panel" style="margin:10px;">
+  <table class="highlight resposive-table centered">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th>mg</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+        <th>Stock</th>
+      </tr>
+    </thead>
+{% for p in model %}
+    <tbody>
+      <tr>
+        <td>{{p.name}}</td>
+        <td>{{p.description}}</td>
+        <td>{{p.mg}}</td>
+        <td>{{p.quantity}}</td>
+        <td>{{p.price}}</td>
+        {% if p.stock %}
+          <td class="green">Disponible</td>
+        {% else %}
+          <td class="red">No disponible</td>
+        {% endif %}
+        <td>
+          <a href="#" class="btn blue">Editar</a>
+          <a href="#" class="btn red">Eliminar</a>
+        </td>
+
+      </tr>
+{% endfor %}
+    </tbody>
+  </table>
+</div>
+
+
+
+{% else %}
+<div class="container">
+  <div class="row">
+    <div class="col 12">
+      <p>ERROR 404, SOMETHING WRONG :( . THIS PAGE IS FOR ONLY SUPERUSER</p>
+    </div>
+  </div>
+</div>
+{% endif %}
+{% endblock %}
